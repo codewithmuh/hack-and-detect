@@ -1,0 +1,34 @@
+title: SQL Injection Attempt in Web Login
+status: experimental
+description: >
+  Detects common SQL injection tokens (comment sequences, tautologies, quote
+  breakouts) appearing in the username/payload fields of the login endpoint.
+references:
+  - https://owasp.org/www-community/attacks/SQL_Injection
+logsource:
+  product: hack-and-detect
+  service: web-01
+  category: application
+detection:
+  keywords_comment:
+    payload|contains:
+      - "--"
+      - "/*"
+      - "#"
+  keywords_tautology:
+    payload|contains:
+      - "' or '"
+      - "' or 1"
+      - "or 1=1"
+      - "' or 1=1"
+  keywords_breakout:
+    user|contains:
+      - "'"
+  condition: keywords_comment or keywords_tautology or keywords_breakout
+fields:
+  - ip
+  - user
+  - payload
+falsepositives:
+  - Passwords that legitimately contain a single quote (tune per app)
+level: high
