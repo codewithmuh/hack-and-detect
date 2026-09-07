@@ -1,0 +1,35 @@
+title: Successful Brute Force (Many Failures Then Success)
+status: experimental
+description: >
+  Detects credential brute force: a single source produces many failed logins for
+  an account and then a successful login for the same account — a likely
+  compromise, not just a noisy failure spike.
+references:
+  - https://attack.mitre.org/techniques/T1110/
+logsource:
+  product: hack-and-detect
+  service: det-01
+  category: authentication
+detection:
+  failures:
+    event: auth
+    result: failure
+  success:
+    event: auth
+    result: success
+  # Stateful correlation: >= 5 failures from a src for a user, then a success
+  # from that same src for that same user, within the window.
+  timeframe: 5m
+  condition: |
+    (failures | count() by src, user >= 5) followed by (success by src, user)
+fields:
+  - src
+  - user
+falsepositives:
+  - A user fat-fingering their password a few times then logging in. Tune the
+    threshold, and prioritize alerts where failures span many usernames (spray)
+    or come from unusual geographies/hours.
+level: high
+tags:
+  - attack.credential_access
+  - attack.t1110

@@ -64,7 +64,7 @@ kernel), Windows privesc, persistence, log evasion — and the audit/EDR
 detections that catch each.
 
 ### Track 3 — Web Exploitation (20 labs)
-OWASP Top 10 hands-on: SQL injection ✅, command injection ✅, XSS, CSRF, SSRF,
+OWASP Top 10 hands-on: SQL injection ✅, command injection ✅, XSS ✅, CSRF, SSRF,
 auth bypass, IDOR, file upload, deserialization, SSTI — each with a WAF/log
 detection and the code fix.
 
@@ -73,9 +73,9 @@ Kerberoasting, AS-REP roasting, pass-the-hash, lateral movement, delegation
 abuse, DCSync, Golden/Silver tickets — plus the Windows event & Sigma detections.
 
 ### Track 5 — Detection Engineering & SIEM (20 labs)
-Log pipelines, the ELK Stack (Elasticsearch, Logstash, Kibana), Splunk queries,
-writing Sigma rules, mapping to MITRE ATT&CK, reducing false positives, building
-dashboards and alerts.
+Writing Sigma rules ✅, correlation/threshold detections ✅, false-positive tuning
+✅, log pipelines, the ELK Stack (Elasticsearch, Logstash, Kibana), Splunk queries,
+mapping to MITRE ATT&CK, building dashboards and alerts.
 
 ### Track 6 — Incident Response & DFIR (15 labs)
 Triage, memory & disk forensics, log timeline building, malware behavior

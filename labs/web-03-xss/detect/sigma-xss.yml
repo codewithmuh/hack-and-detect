@@ -1,0 +1,36 @@
+title: Reflected XSS Attempt in Web Parameter
+status: experimental
+description: >
+  Detects HTML/JavaScript injection markers (script tags, event handlers,
+  javascript: URIs) in a web request parameter — the signature of an XSS attempt.
+references:
+  - https://owasp.org/www-community/attacks/xss/
+  - https://attack.mitre.org/techniques/T1059/007/
+logsource:
+  product: hack-and-detect
+  service: web-03
+  category: application
+detection:
+  tags:
+    payload|contains:
+      - "<script"
+      - "</script>"
+      - "<img"
+      - "<svg"
+      - "<iframe"
+  handlers:
+    payload|contains:
+      - "onerror="
+      - "onload="
+      - "onmouseover="
+      - "javascript:"
+  condition: tags or handlers
+fields:
+  - ip
+  - payload
+falsepositives:
+  - Search terms that legitimately contain angle brackets (rare; tune per app)
+level: high
+tags:
+  - attack.execution
+  - attack.t1059.007
