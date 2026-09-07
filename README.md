@@ -40,6 +40,19 @@ Detect is built on four rules:
 
 ---
 
+## What's covered
+
+The full path from zero to job-ready — everything a 90-day study plan gives you,
+plus detection and remediation for every attack. The complete map, and how it
+compares to a standard study plan, is in **[`CURRICULUM.md`](CURRICULUM.md)**.
+
+- **[Foundations](foundations/)** — networking (Network+), security principles
+  (Security+), Linux, Python for security, Git.
+- **Hands-on tracks** — the attack → detect → fix labs (below).
+- **[Capstone](capstone/)** — home lab, CTF practice, an end-to-end
+  attack-and-defense case study.
+- **[Career](career/)** — portfolio, resume template, roles, and interview prep.
+
 ## Tracks
 
 Labs are grouped by skill, not by day. Do them in order, or jump to the topic
@@ -47,12 +60,13 @@ you need. Want the challenge format? See [`PATHS/100-day-plan.md`](PATHS/100-day
 
 | Track | Focus | Labs |
 |-------|-------|------|
-| 1 — Network & Traffic | Packet analysis, scanning, protocols | 12 |
+| 1 — Network & Traffic | Wireshark, tcpdump, Suricata, scanning, protocols | 12 |
 | 2 — Linux & Windows Attack | Privilege escalation, persistence | 18 |
 | 3 — Web Exploitation | OWASP Top 10, hands-on | 20 |
 | 4 — Active Directory | Kerberos, lateral movement | 15 |
-| 5 — Detection Engineering | Sigma, Splunk, log analysis | 20 |
+| 5 — Detection Engineering & SIEM | Sigma, Splunk, ELK, log analysis | 20 |
 | 6 — Incident Response & DFIR | Triage, forensics, timelines | 15 |
+| 7 — Cloud Security | AWS/GCP/Azure misconfig, IAM, hardening | 12 |
 
 > Labs land here as they ship. Track your progress in your own fork's
 > [`PROGRESS.md`](PROGRESS.md).
