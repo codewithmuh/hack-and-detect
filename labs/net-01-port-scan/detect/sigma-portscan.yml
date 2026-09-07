@@ -1,0 +1,27 @@
+title: Horizontal Port Scan from Single Source
+status: experimental
+description: >
+  Detects a single source address connecting to many distinct destination ports
+  in a short window — the signature of a horizontal port scan / service discovery.
+references:
+  - https://attack.mitre.org/techniques/T1046/
+logsource:
+  product: hack-and-detect
+  service: net-01
+  category: network_connection
+detection:
+  selection:
+    event: connect
+  # Aggregation: same src touching a large number of distinct dst_port values.
+  # In a SIEM this is a threshold/aggregation rule; here detect.sh implements it.
+  timeframe: 10s
+  condition: selection | count(dst_port) by src > 10
+fields:
+  - src
+  - dst_port
+falsepositives:
+  - Vulnerability scanners and monitoring tools (allowlist their source IPs)
+level: high
+tags:
+  - attack.discovery
+  - attack.t1046

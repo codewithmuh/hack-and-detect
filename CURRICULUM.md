@@ -54,7 +54,7 @@ Each lab: spin up a target, exploit it, detect your own attack, harden it,
 self-grade. Grouped by skill, not by day.
 
 ### Track 1 — Network & Traffic Analysis (12 labs)
-Packet capture and reading (Wireshark, tcpdump), scanning & enumeration (nmap),
+Scanning & enumeration ✅, packet capture and reading (Wireshark, tcpdump),
 protocol abuse (ARP spoofing, DNS, DHCP), IDS/IPS with Suricata & Zeek, writing
 and tuning network detection rules.
 

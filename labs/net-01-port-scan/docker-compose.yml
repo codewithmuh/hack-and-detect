@@ -1,0 +1,9 @@
+services:
+  target:
+    build: ./app
+    ports:
+      - "127.0.0.1:9000-9020:9000-9020"   # localhost only
+    volumes:
+      - sensorlogs:/var/log/sensor
+volumes:
+  sensorlogs:
