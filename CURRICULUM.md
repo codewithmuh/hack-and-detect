@@ -64,8 +64,8 @@ kernel), Windows privesc, persistence, log evasion — and the audit/EDR
 detections that catch each.
 
 ### Track 3 — Web Exploitation (20 labs)
-OWASP Top 10 hands-on: SQL injection ✅, XSS, CSRF, SSRF, auth bypass, IDOR,
-command injection, file upload, deserialization, SSTI — each with a WAF/log
+OWASP Top 10 hands-on: SQL injection ✅, command injection ✅, XSS, CSRF, SSRF,
+auth bypass, IDOR, file upload, deserialization, SSTI — each with a WAF/log
 detection and the code fix.
 
 ### Track 4 — Active Directory (15 labs)

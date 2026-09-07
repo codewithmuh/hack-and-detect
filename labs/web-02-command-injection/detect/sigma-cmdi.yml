@@ -1,0 +1,40 @@
+title: OS Command Injection Attempt in Web Parameter
+status: experimental
+description: >
+  Detects shell metacharacters and common command names in a web request
+  parameter that is passed to a system command — the signature of OS command
+  injection.
+references:
+  - https://owasp.org/www-community/attacks/Command_Injection
+  - https://attack.mitre.org/techniques/T1059/
+logsource:
+  product: hack-and-detect
+  service: web-02
+  category: application
+detection:
+  metachars:
+    payload|contains:
+      - ";"
+      - "|"
+      - "&&"
+      - "$("
+      - "`"
+      - ">"
+  command_names:
+    payload|contains:
+      - "cat "
+      - "whoami"
+      - "/etc/passwd"
+      - "curl "
+      - "wget "
+      - "nc "
+  condition: metachars or command_names
+fields:
+  - ip
+  - payload
+falsepositives:
+  - Legitimate values that contain shell metacharacters (validate/allowlist input)
+level: high
+tags:
+  - attack.execution
+  - attack.t1059
