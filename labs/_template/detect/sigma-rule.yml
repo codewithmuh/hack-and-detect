@@ -1,0 +1,10 @@
+title: <Detection title>
+status: experimental
+description: <what this catches>
+logsource:
+  category: <e.g. webserver>
+detection:
+  selection:
+    <field>: <pattern>
+  condition: selection
+level: high
