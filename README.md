@@ -1,10 +1,33 @@
 # Hack & Detect
 
+<p align="center">
+  <a href="https://github.com/codewithmuh/hack-and-detect/releases"><img src="https://img.shields.io/github/v/release/codewithmuh/hack-and-detect?color=blue&label=version&style=flat-square" alt="GitHub Release"></a>
+  <a href="https://github.com/codewithmuh/hack-and-detect/stargazers"><img src="https://img.shields.io/github/stars/codewithmuh/hack-and-detect?style=flat-square" alt="Stars"></a>
+  <a href="https://github.com/codewithmuh/hack-and-detect/network/members"><img src="https://img.shields.io/github/forks/codewithmuh/hack-and-detect?style=flat-square" alt="Forks"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat-square" alt="License: MIT"></a>
+  <a href="https://youtube.com/@codewithmuh"><img src="https://img.shields.io/badge/YouTube-codewithmuh-FF0000?style=flat-square&logo=youtube&logoColor=white" alt="YouTube"></a>
+  <br>
+  <img src="https://img.shields.io/badge/Track-Red%20%7C%20Blue%20%7C%20Purple-red?style=flat-square" alt="Track">
+  <img src="https://img.shields.io/badge/Framework-MITRE%20ATT%26CK-blue?style=flat-square" alt="MITRE ATT&CK">
+  <img src="https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker">
+  <img src="https://img.shields.io/badge/Detection-Sigma%20%7C%20Suricata%20%7C%20Splunk-orange?style=flat-square" alt="Detection">
+</p>
+
 **Learn cybersecurity by breaking things — then detecting and fixing them.**
 
 Every lab in this repo runs with one command, gives you a target to attack, a
 detection to catch the attack you just ran, and a fix that kills it. You finish
 with a portfolio of exploits, detection rules, and writeups — not a checklist.
+
+```mermaid
+flowchart LR
+    A["1. Deploy<br/><code>make up</code>"] --> B["2. Exploit Target<br/><code>make attack</code>"]
+    B --> C["3. Fire Detection<br/><code>make detect</code>"]
+    C --> D["4. Harden & Patch<br/><code>apply fix</code>"]
+    D --> E["5. Self-Grade<br/><code>make verify</code>"]
+    E -- PASS --> F["Proof of Flag & Portfolio Artifact"]
+    E -- FAIL --> D
+```
 
 ```bash
 cd labs/web-01-sql-injection
